@@ -18,6 +18,22 @@ npm install @ra-libs/react
 
 ## Services
 
+### raDataRestProvider
+
+it uses ra-data-simple-rest provider and intercepts react-admin requests to transform to formData when it has any file in the request body. 
+
+```tsx
+
+import { raDataRestProvider } from '@ra-libs/react';
+
+<Admin
+    dataProvider={raDataRestProvider('<API_URL>')}
+>
+    ...
+</Admin>
+
+```
+
 ### LocalSession
 
 a customized sessionStoage class that uses cookies when sessionStorage not available.
