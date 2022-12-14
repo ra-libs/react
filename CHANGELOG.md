@@ -1,3 +1,12 @@
+# [1.1.0](https://github.com/ra-libs/react/compare/v1.0.0...v1.1.0) (2022-12-14)
+
+
+### Features
+
+* **providers:** add raDataRestProvider ([0769d61](https://github.com/ra-libs/react/commit/0769d619edb8de3bb2b32e36b81fe36a01fb5977))
+* **providers:** add raDataRestProvider ([f50f73e](https://github.com/ra-libs/react/commit/f50f73e6c52796caf89ff4b9dc9f541debd92853))
+* **services:** add HttpRequest ([6394008](https://github.com/ra-libs/react/commit/63940083d872faf775e676517fdf8fa5a6ba1d07))
+
 # 1.0.0 (2022-12-14)
 
 
