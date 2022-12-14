@@ -1,7 +1,6 @@
 {
     "include": [
-        "src",
-        "tests/services/LocalSession/test.ts"
+        "src"
     ],
     "exclude": [
         "dist",
