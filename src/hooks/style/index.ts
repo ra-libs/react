@@ -1,8 +1,8 @@
-import { useMediaQuery as useMuiMediaQuery, Theme } from '@mui/material'
+import { useMediaQuery, Theme } from '@mui/material'
 
-export function useMediaQuery() {
-  const isXSmall = useMuiMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
-  const isSmall = useMuiMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
+export function useScreenSize() {
+  const isXSmall = useMediaQuery((theme: Theme) => theme.breakpoints.down('sm'))
+  const isSmall = useMediaQuery((theme: Theme) => theme.breakpoints.down('lg'))
 
   return {
     isXSmall,

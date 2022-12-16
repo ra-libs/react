@@ -1,14 +1,14 @@
 import React from 'react'
 
 import { DatagridProps, SimpleList, SimpleListProps } from 'react-admin'
-import { useMediaQuery } from '../../hooks/style'
+import { useScreenSize } from '../../hooks/style'
 
 import { Datagrid } from '../Datagrid'
 
 type ResponsiveDatagridProps = SimpleListProps & DatagridProps
 
 export function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
-  const { isSmall } = useMediaQuery()
+  const { isSmall } = useScreenSize()
   const { primaryText, secondaryText, tertiaryText, linkType, rowClick, children } = props
 
   return isSmall ? (

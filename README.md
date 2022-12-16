@@ -14,7 +14,36 @@ Run npm install
 ```bash
 npm install @ra-libs/react
 ```
+## Components
 
+### ResponsiveDatagrid
+
+A component to render [SimpleList](https://marmelab.com/react-admin/SimpleList.html) or [Datagrid](https://marmelab.com/react-admin/Datagrid.html) based on screen size. 
+
+```tsx
+      <ResponsiveDatagrid
+        primaryText={(record) => `${record.firstName} ${record.lastName}`}
+        secondaryText={(record) => `${record.company}`}
+      >
+        <TextField source="firstName" />
+        <TextField source="lastName" />
+        <TextField source="company" />
+      </ResponsiveDatagrid>
+```
+
+### Datagrid
+
+Datagrid component with bulkActionButtons false by default
+
+## Hooks
+
+### useScreenSize
+
+Hook that uses material ui useMediaQuery to check if screen isSmall or isXsmall
+
+```ts
+    const { isSmall, isXSmall } = useScreenSize()
+```
 
 ## Services
 

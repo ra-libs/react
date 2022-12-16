@@ -4,12 +4,18 @@ import simpleRestProvider from 'ra-data-simple-rest'
 import { DataProvider, fetchUtils } from 'react-admin'
 import { LocalSession } from '../../services/LocalSession'
 
+const storage_key = 'raDataRestProvider_options'
+
 const httpClient = (url: string, options: fetchUtils.Options = {}) => {
+  const initialOptions = LocalSession.get(storage_key)
+  options = { ...initialOptions, ...options }
+
   if (!options.headers) {
     options.headers = new Headers({ Accept: 'application/json' })
   }
+
   options.headers.set('react-admin-agent', true)
-  options.headers.set('Accept-Language', 'pt-BR')
+
   if (LocalSession.check('accessToken')) {
     options.user = {
       authenticated: true,
@@ -19,19 +25,7 @@ const httpClient = (url: string, options: fetchUtils.Options = {}) => {
   return fetchUtils.fetchJson(url, options)
 }
 
-function NewHttpClient(url: string, options: fetchUtils.Options = {}) {
-  return function () {
-    return httpClient(url, options)
-  }
-}
-
-function createOrUpdateFileResource(
-  resource: string,
-  params: any,
-  action: string,
-  URL: string,
-  options: fetchUtils.Options = {},
-) {
+function createOrUpdateFileResource(resource: string, params: any, action: string, URL: string) {
   const formData = new FormData()
   Object.keys(params.data).forEach((key) => {
     if (params?.data?.[key]?.rawFile instanceof File) {
@@ -49,7 +43,6 @@ function createOrUpdateFileResource(
   }
 
   return httpClient(url, {
-    ...options,
     method: method,
     body: formData,
   }).then(({ json }) => ({
@@ -61,8 +54,9 @@ function hasAnyFile(data: any) {
   return data && Object.values(data).some((value) => typeof value === 'object' && value?.rawFile instanceof File)
 }
 
-export const raDataRestProvider = (URL: string, options: fetchUtils.Options) => {
-  const simpleProvider = simpleRestProvider(URL, NewHttpClient(URL, options))
+export const raDataRestProvider = (URL: string, options: fetchUtils.Options = {}) => {
+  LocalSession.set('raDataRestProvider_options', options)
+  const simpleProvider = simpleRestProvider(URL, httpClient)
 
   const nestJsDataProvider: DataProvider = {
     ...simpleProvider,
@@ -74,7 +68,7 @@ export const raDataRestProvider = (URL: string, options: fetchUtils.Options) => 
         return function () {
           const data = arguments?.[1]?.data
           if (hasAnyFile(data)) {
-            return createOrUpdateFileResource(...arguments, prop, URL, options)
+            return createOrUpdateFileResource(...arguments, prop, URL)
           } else {
             return target[prop].apply(this, arguments)
           }
