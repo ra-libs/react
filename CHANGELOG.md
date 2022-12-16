@@ -1,3 +1,17 @@
+# [1.2.0](https://github.com/ra-libs/react/compare/v1.1.0...v1.2.0) (2022-12-16)
+
+
+### Bug Fixes
+
+* **hooks:** rename useQueryMedia to useScreenSize ([545154a](https://github.com/ra-libs/react/commit/545154a7b567d551c278a9bcf9924bcb0acb6444))
+* **provider:** allow passing options ([c0f3c39](https://github.com/ra-libs/react/commit/c0f3c399e69f2ac442c5778ada01483553e7bfa7))
+* remove default components export ([90b18b0](https://github.com/ra-libs/react/commit/90b18b0a0635086ae6530737dc921332b389042a))
+
+
+### Features
+
+* add ResponseDataGrid and style hooks ([4e20973](https://github.com/ra-libs/react/commit/4e20973094017da1f2ffcaf8f2b1db4490bb504c))
+
 # [1.1.0](https://github.com/ra-libs/react/compare/v1.0.0...v1.1.0) (2022-12-14)
 
 
