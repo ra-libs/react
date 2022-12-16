@@ -3,11 +3,11 @@ import React from 'react'
 import { DatagridProps, SimpleList, SimpleListProps } from 'react-admin'
 import { useMediaQuery } from '../../hooks/style'
 
-import Datagrid from '../Datagrid'
+import { Datagrid } from '../Datagrid'
 
 type ResponsiveDatagridProps = SimpleListProps & DatagridProps
 
-function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
+export function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
   const { isSmall } = useMediaQuery()
   const { primaryText, secondaryText, tertiaryText, linkType, rowClick, children } = props
 
@@ -22,5 +22,3 @@ function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
     <Datagrid rowClick={rowClick || 'show'}>{children}</Datagrid>
   )
 }
-
-export default ResponsiveDatagrid

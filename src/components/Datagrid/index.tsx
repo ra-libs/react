@@ -2,7 +2,7 @@ import React from 'react'
 
 import { DatagridProps, Datagrid as RaDatagrid } from 'react-admin'
 
-function Datagrid(props: DatagridProps) {
+export function Datagrid(props: DatagridProps) {
   const { children, bulkActionButtons, ...rest } = props
 
   return (
@@ -11,5 +11,3 @@ function Datagrid(props: DatagridProps) {
     </RaDatagrid>
   )
 }
-
-export default Datagrid
