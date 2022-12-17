@@ -68,6 +68,7 @@
     "loose-envify": "^1.4.0",
     "ra-data-simple-rest": "^4.6.1",
     "react-admin": "^4.6.1",
+    "react-imask": "^6.4.3",
     "scheduler": "^0.23.0"
   },
   "peerDependencies": {
