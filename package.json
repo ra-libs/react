@@ -1,6 +1,6 @@
 {
   "name": "@ra-libs/react",
-  "version": "1.3.1",
+  "version": "1.3.2",
   "description": "React admin front components and utils",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",

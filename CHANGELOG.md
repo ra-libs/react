@@ -1,3 +1,10 @@
+## [1.3.2](https://github.com/ra-libs/react/compare/v1.3.1...v1.3.2) (2022-12-19)
+
+
+### Bug Fixes
+
+* **components:** use nullish coalescing operator ([bedb4e1](https://github.com/ra-libs/react/commit/bedb4e1cd1b87c122ca4c204fba1c72b2cd89b4e))
+
 ## [1.3.1](https://github.com/ra-libs/react/compare/v1.3.0...v1.3.1) (2022-12-19)
 
 
