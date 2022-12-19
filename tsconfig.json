@@ -12,6 +12,7 @@
             "dom",
             "esnext"
         ],
+        "target": "es6",
         "importHelpers": true,
         "declaration": true,
         "sourceMap": true,
