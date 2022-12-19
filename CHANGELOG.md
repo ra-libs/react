@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/ra-libs/react/compare/v1.3.0...v1.3.1) (2022-12-19)
+
+
+### Bug Fixes
+
+* **config:** use es6 target ([c1f5e9f](https://github.com/ra-libs/react/commit/c1f5e9f1886a40c57b0f4a61d8032cae7f4f57f0))
+
 # [1.3.0](https://github.com/ra-libs/react/compare/v1.2.0...v1.3.0) (2022-12-19)
 
 
