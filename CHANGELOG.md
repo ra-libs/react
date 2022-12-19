@@ -1,3 +1,18 @@
+# [1.3.0](https://github.com/ra-libs/react/compare/v1.2.0...v1.3.0) (2022-12-19)
+
+
+### Bug Fixes
+
+* lock file ([376eb40](https://github.com/ra-libs/react/commit/376eb406ed346a8a1765e89a212250d44c1cc377))
+
+
+### Features
+
+* **fields:** add LabeledComponents ([506b77e](https://github.com/ra-libs/react/commit/506b77e0a1df003d9bf284702ccde382ed006bb3))
+* **hooks:** add locale hooks ([0a22195](https://github.com/ra-libs/react/commit/0a22195b80750f8c830a979c48c4c4b66570b5a6))
+* **inputs:** add DateInput, MaskedTextInput ([22f4bd0](https://github.com/ra-libs/react/commit/22f4bd09410666572017c83cbd8300ab63a513ac))
+* **inputs:** add MaskedTextInput ([f073aec](https://github.com/ra-libs/react/commit/f073aec875562aaec2bf0614e69d23e9252e0ca6))
+
 # [1.2.0](https://github.com/ra-libs/react/compare/v1.1.0...v1.2.0) (2022-12-16)
 
 
