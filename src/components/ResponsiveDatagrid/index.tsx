@@ -16,9 +16,9 @@ export function ResponsiveDatagrid(props: ResponsiveDatagridProps) {
       primaryText={primaryText || (() => '')}
       secondaryText={secondaryText}
       tertiaryText={tertiaryText}
-      linkType={linkType || 'show'}
+      linkType={linkType ?? 'show'}
     />
   ) : (
-    <Datagrid rowClick={rowClick || 'show'}>{children}</Datagrid>
+    <Datagrid rowClick={rowClick ?? 'show'}>{children}</Datagrid>
   )
 }
