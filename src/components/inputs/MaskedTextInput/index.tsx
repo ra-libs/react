@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { TextField } from '@mui/material'
 import { TextInputProps, useInput, useTranslate, useResourceContext } from 'react-admin'
 import { useIMask } from 'react-imask'
+import { useFormContext } from 'react-hook-form'
 
 interface MaskedTextInputProps extends TextInputProps {
   mask: string
@@ -17,20 +18,23 @@ export function MaskedTextInput(props: MaskedTextInputProps) {
     formState: { isSubmitted },
     isRequired,
     id,
-  } = useInput(props)
+  } = useInput(propsRest)
+
+  const form = useFormContext()
 
   const hasError = (isTouched || isSubmitted) && invalid
 
   const resource = useResourceContext()
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${field.name}`)
 
-  const { ref, value, setValue } = useIMask({ mask })
-
-  useEffect(() => {
-    if (field.value) {
-      setValue(field.value)
-    }
-  }, [])
+  const maskInput = useIMask(
+    { mask },
+    {
+      onAccept: (value) => {
+        form.setValue(props.source, value, { shouldDirty: true })
+      },
+    },
+  )
 
   return (
     <TextField
@@ -38,9 +42,8 @@ export function MaskedTextInput(props: MaskedTextInputProps) {
       {...propsRest}
       id={id}
       required={isRequired}
-      inputRef={ref}
+      inputRef={maskInput.ref}
       label={label}
-      value={value}
       margin={margin}
       error={hasError}
       helperText={hasError ? translate(error?.message || '') : ''}
