@@ -1,6 +1,6 @@
 {
   "name": "@ra-libs/react",
-  "version": "1.1.2",
+  "version": "1.1.25",
   "description": "React admin front components and utils",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.js",
@@ -62,6 +62,8 @@
     "typescript": "^4.9.4"
   },
   "dependencies": {
+    "@mui/material": "^5.11.0",
+    "@mui/x-date-pickers": "^5.0.11",
     "axios": "^1.2.1",
     "csstype": "^3.1.1",
     "js-tokens": "^4.0.0",
