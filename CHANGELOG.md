@@ -1,3 +1,11 @@
+# [1.4.0](https://github.com/ra-libs/react/compare/v1.3.2...v1.4.0) (2022-12-22)
+
+
+### Features
+
+* **fields:** add boolean, date, select, reference and text fields ([d630fd9](https://github.com/ra-libs/react/commit/d630fd97fd400d2cb66deace91a2f0a92bc67c65))
+* **fields:** add FileViewerField ([d5b6dd6](https://github.com/ra-libs/react/commit/d5b6dd6a34de296c4771e47462b2083c0808f111))
+
 ## [1.3.2](https://github.com/ra-libs/react/compare/v1.3.1...v1.3.2) (2022-12-19)
 
 
