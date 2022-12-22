@@ -12,7 +12,7 @@
   * [ReferenceField](components/fields/referencefield.md)
   * [SelectField](components/fields/selectfield.md)
   * [TextField](components/fields/textfield.md)
-  * [FielViewerField](components/fields/fielviewerfield.md)
+  * [FileViewerField](components/fields/fileviewerfield.md)
 
 ## Hooks
 
