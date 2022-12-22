@@ -2,7 +2,7 @@
 
 a customized axios class
 
-```ts
+```tsx
 import { HttpRequest } from '@ra-libs/react';
 
 // Get

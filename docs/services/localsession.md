@@ -1,8 +1,8 @@
 # LocalSession
 
-a customized sessionStoage class that uses cookies when sessionStorage not available.
+a customized sessionStorage class that uses cookies when sessionStorage is not available.
 
-```ts
+```tsx
 
 import { LocalSession } from '@ra-libs/react'
 
@@ -13,7 +13,7 @@ LocalSession.set("key", "value");
 // Get session key
 LocalSession.get("key");
 
-// Check if key exists
+// Check if the key exists
 LocalSession.check("key");
 
 ```
