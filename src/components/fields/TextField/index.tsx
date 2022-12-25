@@ -5,5 +5,5 @@ import { LabeledFieldProps } from '../../../config'
 export function TextField(props: LabeledFieldProps<TextFieldProps>) {
   const { useLabel, ...rest } = props
   const field = <RaTextField {...rest} />
-  return useLabel ? <Labeled>{field}</Labeled> : <> {field}</>
+  return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>
 }

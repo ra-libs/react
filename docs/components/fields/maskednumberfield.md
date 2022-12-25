@@ -2,6 +2,8 @@
 
 MaskedNumberField component uses [react-number-format](https://www.npmjs.com/package/react-number-format) to render the number field with a fixed decimal scale
 
+### Usage
+
 ```tsx
 import { MaskedNumberField } from '@ra-libs/react';
 
