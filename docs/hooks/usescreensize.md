@@ -1,7 +1,9 @@
 # useScreenSize
 
-Hook that uses material ui useMediaQuery to check if screen isSmall or isXsmall
+Hook that uses material ui useMediaQuery to check if screen isSmall or isXsmall.
 
-```ts
-    const { isSmall, isXSmall } = useScreenSize()
+```tsx
+import { useScreenSize } from '@ra-libs/react';    
+
+const { isSmall, isXSmall } = useScreenSize()
 ```

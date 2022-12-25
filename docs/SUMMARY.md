@@ -19,7 +19,13 @@
   * [CurrencyField](components/fields/currencyfield.md)
   * [MaskedNumberField](components/fields/maskednumberfield.md)
   * [RichTextField](components/fields/richtextfield.md)
-* [Inputs](components/inputs.md)
+* [Inputs](components/inputs/README.md)
+  * [MaskedNumberInput](components/inputs/maskednumberinput.md)
+  * [CountryInput](components/inputs/countryinput.md)
+  * [CurrencyInput](components/inputs/currencyinput.md)
+* [Common](components/common/README.md)
+  * [Currencies](components/common/currencies.md)
+  * [Countries](components/common/countries.md)
 
 ## Hooks
 
