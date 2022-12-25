@@ -73,6 +73,7 @@
     "ra-data-simple-rest": "^4.6.1",
     "react-admin": "^4.6.1",
     "react-imask": "^6.4.3",
+    "react-number-format": "^5.1.2",
     "scheduler": "^0.23.0"
   },
   "peerDependencies": {
