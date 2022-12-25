@@ -57,7 +57,7 @@ function FileViewer(props: FileViewerProps) {
 
   if (!record?.[source]) return null
 
-  const fileName = title ? record?.[title] : ''
+  const fileName = title ? record?.[title] : 'file'
 
   const button = <Button onClick={handleOpen}>{fileName}</Button>
 
