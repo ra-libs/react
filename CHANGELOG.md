@@ -1,3 +1,15 @@
+# [1.5.0](https://github.com/ra-libs/react/compare/v1.4.0...v1.5.0) (2022-12-25)
+
+
+### Features
+
+* **fields:** add ChipField ([f147210](https://github.com/ra-libs/react/commit/f14721037fc2a5536b33746e6d7deb9ab120c472))
+* **fields:** add CurrencyField ([3fde8c8](https://github.com/ra-libs/react/commit/3fde8c801e46f5e3fc385e57e49fb22225aa5a48))
+* **fields:** add ReferenceArrayField ([f3c8fbf](https://github.com/ra-libs/react/commit/f3c8fbfd86e2e4813a979fd510731aacdff53287))
+* **fields:** add RichTextField ([112ca02](https://github.com/ra-libs/react/commit/112ca02e65e9937c93d605c27172169299f206c5))
+* **inputs:** add CountryInput ([c95a31f](https://github.com/ra-libs/react/commit/c95a31f49b1039762db3a717c26cfd2b9b5dfe9c))
+* **inputs:** add CurrencyInput ([fa4094f](https://github.com/ra-libs/react/commit/fa4094f4e3f2902bb9a97e18cdd42641d191514e))
+
 # [1.4.0](https://github.com/ra-libs/react/compare/v1.3.2...v1.4.0) (2022-12-22)
 
 
