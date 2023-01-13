@@ -12,7 +12,6 @@
   * [CurrencyField](components/fields/currencyfield.md)
   * [DateField](components/fields/datefield.md)
   * [FileViewerField](components/fields/fileviewerfield.md)
-  * [MapsInput](components/fields/mapsinput.md)
   * [MaskedNumberField](components/fields/maskednumberfield.md)
   * [ReferenceArrayField](components/fields/referencearrayfield.md)
   * [ReferenceField](components/fields/referencefield.md)
@@ -24,7 +23,10 @@
 * [Inputs](components/inputs/README.md)
   * [CountryInput](components/inputs/countryinput.md)
   * [CurrencyInput](components/inputs/currencyinput.md)
+  * [MapsInput](components/fields/mapsinput.md)
   * [MaskedNumberInput](components/inputs/maskednumberinput.md)
+  * [PlacesTimelineInput](components/fields/placestimelineinput.md)
+  * [TimeInput](components/fields/timeinput.md)
 * [ResponsiveDatagrid](components/responsivedatagrid.md)
 
 ## Hooks
