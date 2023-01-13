@@ -18,6 +18,7 @@
   * [RichTextField](components/fields/richtextfield.md)
   * [SelectField](components/fields/selectfield.md)
   * [TextField](components/fields/textfield.md)
+  * [TimeField](components/fields/timefield.md)
 * [Inputs](components/inputs/README.md)
   * [CountryInput](components/inputs/countryinput.md)
   * [CurrencyInput](components/inputs/currencyinput.md)
