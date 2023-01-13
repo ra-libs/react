@@ -12,6 +12,7 @@
   * [CurrencyField](components/fields/currencyfield.md)
   * [DateField](components/fields/datefield.md)
   * [FileViewerField](components/fields/fileviewerfield.md)
+  * [MapsInput](components/fields/mapsinput.md)
   * [MaskedNumberField](components/fields/maskednumberfield.md)
   * [ReferenceArrayField](components/fields/referencearrayfield.md)
   * [ReferenceField](components/fields/referencefield.md)
