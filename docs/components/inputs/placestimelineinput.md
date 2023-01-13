@@ -1,16 +1,17 @@
-# MapsInput
+# PlacesTimelineInput
 
-MapsInput component uses mui Autocomplete component to render places using Google Places API. You should provide the API Url.
+PlacesTimelineInput component uses mui Autocomplete component to render places using Google Places API. You should provide the API Url.
+
+> The output result is an array of string with the places.
 
 ### Usage
 
 ```tsx
-import { MapsInput } from '@ra-libs/react';
+import { PlacesTimelineInput } from '@ra-libs/react';
 
-<MapsInput
-    source="<source>"
-    mapType="establishment"
-    useMainText
+<PlacesTimelineInput
+    source="places"
+    fullWidth
     API_URL={`${env.API_URL}/places`}
 />
 ```
@@ -24,6 +25,5 @@ import { MapsInput } from '@ra-libs/react';
 | API_MAP_TYPE | false | string | 'type' | Query param key to set places type. 
 | mapType | false    | string | -       | <p>define places type. check google places type [documentation](https://developers.google.com/maps/documentation/places/web-service/supported_types) for more information.</p> |
 | useMainText | false    | boolean | false | use Google Places api structured_formatting.main_text response.                                                                                                                                                                                       |
-
 
 > It accepts react-admin TextInput props
