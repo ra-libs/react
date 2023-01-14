@@ -1,3 +1,10 @@
+## [1.6.1](https://github.com/ra-libs/react/compare/v1.6.0...v1.6.1) (2023-01-14)
+
+
+### Bug Fixes
+
+* update deps ([d7212d6](https://github.com/ra-libs/react/commit/d7212d649f82109d2ccf8e4fd4cf2ff40e3444f0))
+
 # [1.6.0](https://github.com/ra-libs/react/compare/v1.5.0...v1.6.0) (2023-01-14)
 
 
