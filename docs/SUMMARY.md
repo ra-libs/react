@@ -23,12 +23,12 @@
 * [Inputs](components/inputs/README.md)
   * [CountryInput](components/inputs/countryinput.md)
   * [CurrencyInput](components/inputs/currencyinput.md)
-  * [DateInput](components/fields/dateinput.md)
-  * [MapsInput](components/fields/mapsinput.md)
+  * [DateInput](components/inputs/dateinput.md)
+  * [MapsInput](components/inputs/mapsinput.md)
   * [MaskedNumberInput](components/inputs/maskednumberinput.md)
   * [MaskedTextInput](components/inputs/maskedtextinput.md)
-  * [PlacesTimelineInput](components/fields/placestimelineinput.md)
-  * [TimeInput](components/fields/timeinput.md)
+  * [PlacesTimelineInput](components/inputs/placestimelineinput.md)
+  * [TimeInput](components/inputs/timeinput.md)
 * [ResponsiveDatagrid](components/responsivedatagrid.md)
 
 ## Hooks
