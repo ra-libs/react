@@ -1,3 +1,13 @@
+# [1.6.0](https://github.com/ra-libs/react/compare/v1.5.0...v1.6.0) (2023-01-14)
+
+
+### Features
+
+* **fields:** add MapsInput ([aa51c05](https://github.com/ra-libs/react/commit/aa51c0598249eb211fa01b70b941b11f6d9ff41a))
+* **fields:** add TimeField ([9df5f47](https://github.com/ra-libs/react/commit/9df5f4735946951dcad18208e0356c6091852b09))
+* **fields:** add TimelineArrayField ([227dece](https://github.com/ra-libs/react/commit/227dece12789acf069d69db2b036b02218cffb5a))
+* **inputs:** add PlacesTimelineInput ([801801c](https://github.com/ra-libs/react/commit/801801c2f37ac4233264e5558d701eecf789f83d))
+
 # [1.5.0](https://github.com/ra-libs/react/compare/v1.4.0...v1.5.0) (2022-12-25)
 
 
