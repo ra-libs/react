@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/ra-libs/react/compare/v1.6.1...v1.7.0) (2023-01-17)
+
+
+### Features
+
+* **validations:** add minYear and maxYear validators ([c97ca0a](https://github.com/ra-libs/react/commit/c97ca0a377e42945159eee78260f875259b85104))
+
 ## [1.6.1](https://github.com/ra-libs/react/compare/v1.6.0...v1.6.1) (2023-01-14)
 
 
