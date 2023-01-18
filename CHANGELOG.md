@@ -1,3 +1,10 @@
+## [1.7.1](https://github.com/ra-libs/react/compare/v1.7.0...v1.7.1) (2023-01-18)
+
+
+### Bug Fixes
+
+* **validations:** parse string to date in min,max year ([7c4a793](https://github.com/ra-libs/react/commit/7c4a7933642857d0bed0b433d366779e94cf038a))
+
 # [1.7.0](https://github.com/ra-libs/react/compare/v1.6.1...v1.7.0) (2023-01-17)
 
 
