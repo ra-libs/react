@@ -1,25 +1,14 @@
 import React from 'react'
-import { SelectInput, SelectInputProps, useTranslate } from 'react-admin'
+import { SelectInput, SelectInputProps } from 'react-admin'
 
-import { CURRENCIES, MAPPED_CURRENCIES } from '../../../config/common/currencies'
+import { useCurrencies } from '../../../hooks/currencies'
 
-interface CurrencyInputProps extends SelectInputProps {
-  translationPath?: string
-}
+interface CurrencyInputProps extends SelectInputProps {}
 
 export function CurrencyInput(props: CurrencyInputProps) {
-  const { source = 'currency', translationPath, defaultValue, ...rest } = props
-  const translate = useTranslate()
+  const { source = 'currency', defaultValue, ...rest } = props
 
-  return (
-    <SelectInput
-      source={source}
-      choices={CURRENCIES.map((currency) => ({
-        id: currency.id,
-        name: `${currency.symbol}${translationPath ? ` - ${translate(`${translationPath}.${currency.id}`)}` : ''}`,
-      }))}
-      defaultValue={defaultValue || MAPPED_CURRENCIES['BRL'].id}
-      {...rest}
-    />
-  )
+  const currencies = useCurrencies()
+
+  return <SelectInput source={source} choices={currencies} defaultValue={defaultValue || 'BRL'} {...rest} />
 }

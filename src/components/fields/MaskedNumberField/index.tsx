@@ -3,8 +3,7 @@ import { TextInputProps, Labeled, useRecordContext, useResourceContext, useTrans
 
 import { InputAttributes, NumericFormat, NumericFormatProps } from 'react-number-format'
 import { LabeledFieldProps } from '../../../config'
-import { MAPPED_CURRENCIES } from '../../../config/common/currencies'
-
+import { MAPPED_CURRENCIES } from '../../../config/common'
 interface MaskedNumberFieldProps extends TextInputProps {
   useCurrecyPrefix?: boolean
 }
