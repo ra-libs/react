@@ -161,3 +161,6 @@ export const MAPPED_CURRENCIES = CURRENCIES.reduce((acc: any, curr) => {
     acc[curr.id] = curr
     return acc
 }, {})
+
+
+export * from './locales'

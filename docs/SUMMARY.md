@@ -34,6 +34,8 @@
 ## Hooks
 
 * [useScreenSize](hooks/usescreensize.md)
+* [useCurrencies](hooks/usecurrencies.md)
+* [useCountries](hooks/usecountries.md)
 
 ## Services
 
@@ -45,8 +47,3 @@
 
 * [minYear](validations/minyear.md)
 * [maxYear](validations/maxyear.md)
-
-## Common
-
-  * [Countries](common/countries.md)
-  * [Currencies](common/currencies.md)
