@@ -1,3 +1,17 @@
+# [1.8.0](https://github.com/ra-libs/react/compare/v1.7.1...v1.8.0) (2023-01-23)
+
+
+### Bug Fixes
+
+* update Country and Currency field/input to use hook with translate ([8b6728d](https://github.com/ra-libs/react/commit/8b6728dc8c30a0003fea648a3ef4c29e987f37d9))
+
+
+### Features
+
+* add Phone country and field using mui-tel-input ([fbb1a13](https://github.com/ra-libs/react/commit/fbb1a13791a8240e1ec63e2ff9e5a9b8099f24dd))
+* **hooks:** add useCountries ([ea80921](https://github.com/ra-libs/react/commit/ea809211a242fc19a663d04b4e32106a9c7e4a32))
+* **hooks:** add useCurrencies ([cbc4812](https://github.com/ra-libs/react/commit/cbc4812747a752d33370591614bd3f091b3f1f85))
+
 ## [1.7.1](https://github.com/ra-libs/react/compare/v1.7.0...v1.7.1) (2023-01-18)
 
 
