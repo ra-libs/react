@@ -1,5 +1,5 @@
-import React from 'react'
-import { MuiTelInput } from 'mui-tel-input'
+import React, { useState } from 'react'
+import { MuiTelInput, matchIsValidTel } from 'mui-tel-input'
 import { TextInputProps, useInput, useLocaleState, useResourceContext, useTranslate } from 'react-admin'
 import { useFormContext } from 'react-hook-form'
 
@@ -8,7 +8,8 @@ interface PhoneInputProps extends TextInputProps {}
 export function PhoneInput(props: PhoneInputProps) {
   const [locale] = useLocaleState()
   const translate = useTranslate()
-  const { setValue } = useFormContext()
+  const { setValue: setFormValue } = useFormContext()
+  const [value, setValue] = useState('')
 
   const { margin = 'dense', ...propsRest } = props
 
@@ -17,7 +18,6 @@ export function PhoneInput(props: PhoneInputProps) {
     fieldState: { isTouched, invalid, error },
     formState: { isSubmitted },
     isRequired,
-    id,
   } = useInput(props)
 
   const hasError = (isTouched || isSubmitted) && invalid
@@ -26,13 +26,16 @@ export function PhoneInput(props: PhoneInputProps) {
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${field.name}`)
 
   const handleChange = (newPhone: string) => {
-    setValue(props.source, newPhone, { shouldDirty: true })
+    setValue(newPhone)
+    if (matchIsValidTel(newPhone)) setFormValue(props.source, newPhone, { shouldDirty: true })
+    else setFormValue(props.source, null, { shouldDirty: true })
   }
 
   return (
     <MuiTelInput
       {...propsRest}
       {...field}
+      value={value}
       onChange={handleChange}
       preferredCountries={['BR']}
       langOfCountryName={locale}
