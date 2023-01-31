@@ -1,3 +1,10 @@
+## [1.8.1](https://github.com/ra-libs/react/compare/v1.8.0...v1.8.1) (2023-01-31)
+
+
+### Bug Fixes
+
+* **inputs:** set phone input form only if it is valid ([a13051d](https://github.com/ra-libs/react/commit/a13051d99492d92356f8911fa34f61f2aff5cfd3))
+
 # [1.8.0](https://github.com/ra-libs/react/compare/v1.7.1...v1.8.0) (2023-01-23)
 
 
