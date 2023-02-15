@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { MuiTelInput, matchIsValidTel } from 'mui-tel-input'
 import { TextInputProps, useInput, useLocaleState, useResourceContext, useTranslate } from 'react-admin'
 import { useFormContext } from 'react-hook-form'
@@ -30,6 +30,10 @@ export function PhoneInput(props: PhoneInputProps) {
     if (matchIsValidTel(newPhone)) setFormValue(props.source, newPhone, { shouldDirty: true })
     else setFormValue(props.source, null, { shouldDirty: true })
   }
+
+  useEffect(() => {
+    handleChange(field.value)
+  }, [])
 
   return (
     <MuiTelInput
