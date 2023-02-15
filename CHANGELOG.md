@@ -1,3 +1,10 @@
+## [1.8.2](https://github.com/ra-libs/react/compare/v1.8.1...v1.8.2) (2023-02-15)
+
+
+### Bug Fixes
+
+* **inputs:** set initial value for phone input ([3757109](https://github.com/ra-libs/react/commit/3757109ff789e88a5d78ef55ca4d625af9358a76))
+
 ## [1.8.1](https://github.com/ra-libs/react/compare/v1.8.0...v1.8.1) (2023-01-31)
 
 
