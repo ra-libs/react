@@ -1,3 +1,10 @@
+## [1.8.5](https://github.com/ra-libs/react/compare/v1.8.4...v1.8.5) (2023-04-18)
+
+
+### Bug Fixes
+
+* **Providers:** array field with file (DataProvider) ([f9734c8](https://github.com/ra-libs/react/commit/f9734c8e3772b53b755864b4d0f3c7f282791afc))
+
 ## [1.8.4](https://github.com/ra-libs/react/compare/v1.8.3...v1.8.4) (2023-04-04)
 
 
