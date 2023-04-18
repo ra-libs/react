@@ -5,9 +5,10 @@ import { DataProvider, fetchUtils } from 'react-admin'
 import { LocalSession } from '../../services/LocalSession'
 
 const storage_key = 'raDataRestProvider_options'
+const token_storage_key = 'raDataRestProvider_accessTokenKey'
 
 const httpClient = (url: string, options: fetchUtils.Options = {}) => {
-  const initialOptions = LocalSession.get(storage_key)
+  const initialOptions = LocalSession.get(storage_key) || {}
   options = { ...initialOptions, ...options }
 
   if (!options.headers) {
@@ -16,10 +17,11 @@ const httpClient = (url: string, options: fetchUtils.Options = {}) => {
 
   options.headers.set('react-admin-agent', true)
 
-  if (LocalSession.check('accessToken')) {
+  const tokenKey = LocalSession.get(token_storage_key)
+  if (tokenKey && LocalSession.check(tokenKey)) {
     options.user = {
       authenticated: true,
-      token: `Bearer ${LocalSession.get('accessToken')}`,
+      token: `Bearer ${LocalSession.get(tokenKey)}`,
     }
   }
   return fetchUtils.fetchJson(url, options)
@@ -31,7 +33,12 @@ function createOrUpdateFileResource(resource: string, params: any, action: strin
     if (params?.data?.[key]?.rawFile instanceof File) {
       formData.append(key, params?.data?.[key]?.rawFile)
     } else {
-      formData.append(key, params?.data?.[key])
+      const value = params?.data?.[key]
+      if (Array.isArray(value)) {
+        value.forEach((item) => {
+          formData.append(`${key}[]`, item)
+        })
+      } else formData.append(key, value)
     }
   })
 
@@ -54,8 +61,9 @@ function hasAnyFile(data: any) {
   return data && Object.values(data).some((value) => typeof value === 'object' && value?.rawFile instanceof File)
 }
 
-export const raDataRestProvider = (URL: string, options: fetchUtils.Options = {}) => {
-  LocalSession.set('raDataRestProvider_options', options)
+export const raDataRestProvider = (URL: string, options: fetchUtils.Options = {}, accessTokenKey = 'accessToken') => {
+  LocalSession.set(storage_key, options)
+  LocalSession.set(token_storage_key, accessTokenKey)
   const simpleProvider = simpleRestProvider(URL, httpClient)
 
   const nestJsDataProvider: DataProvider = {
