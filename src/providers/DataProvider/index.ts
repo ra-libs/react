@@ -1,90 +1,153 @@
-/* eslint-disable prefer-rest-params */
-// @ts-nocheck
+import {
+  CreateParams,
+  CreateResult,
+  DeleteManyParams,
+  DeleteManyResult,
+  DeleteParams,
+  DeleteResult,
+  GetListParams,
+  GetListResult,
+  GetManyParams,
+  GetManyReferenceParams,
+  GetManyReferenceResult,
+  GetManyResult,
+  GetOneParams,
+  GetOneResult,
+  DataProvider as RaDataProvider,
+  RaRecord,
+  UpdateManyParams,
+  UpdateManyResult,
+  UpdateParams,
+  UpdateResult,
+  fetchUtils,
+} from 'react-admin'
 import simpleRestProvider from 'ra-data-simple-rest'
-import { DataProvider, fetchUtils } from 'react-admin'
-import { LocalSession } from '../../services/LocalSession'
 
-const storage_key = 'raDataRestProvider_options'
-const token_storage_key = 'raDataRestProvider_accessTokenKey'
+export class DataProvider implements RaDataProvider {
+  private provider: RaDataProvider
+  private httpClient
+  private URL: string
 
-const httpClient = (url: string, options: fetchUtils.Options = {}) => {
-  const initialOptions = LocalSession.get(storage_key) || {}
-  options = { ...initialOptions, ...options }
-
-  if (!options.headers) {
-    options.headers = new Headers({ Accept: 'application/json' })
-  }
-
-  options.headers.set('react-admin-agent', true)
-
-  const tokenKey = LocalSession.get(token_storage_key)
-  if (tokenKey && LocalSession.check(tokenKey)) {
-    options.user = {
-      authenticated: true,
-      token: `Bearer ${LocalSession.get(tokenKey)}`,
-    }
-  }
-  return fetchUtils.fetchJson(url, options)
-}
-
-function createOrUpdateFileResource(resource: string, params: any, action: string, URL: string) {
-  const formData = new FormData()
-  Object.keys(params.data).forEach((key) => {
-    if (params?.data?.[key]?.rawFile instanceof File) {
-      formData.append(key, params?.data?.[key]?.rawFile)
-    } else {
-      const value = params?.data?.[key]
-      if (Array.isArray(value)) {
-        value.forEach((item) => {
-          formData.append(`${key}[]`, item)
-        })
-      } else formData.append(key, value)
-    }
-  })
-
-  let method = 'POST'
-  let url = `${URL}/${resource}`
-  if (action === 'update') {
-    method = 'PUT'
-    url += `/${params.id}`
-  }
-
-  return httpClient(url, {
-    method: method,
-    body: formData,
-  }).then(({ json }) => ({
-    data: json,
-  }))
-}
-
-function hasAnyFile(data: any) {
-  return data && Object.values(data).some((value) => typeof value === 'object' && value?.rawFile instanceof File)
-}
-
-export const raDataRestProvider = (URL: string, options: fetchUtils.Options = {}, accessTokenKey = 'accessToken') => {
-  LocalSession.set(storage_key, options)
-  LocalSession.set(token_storage_key, accessTokenKey)
-  const simpleProvider = simpleRestProvider(URL, httpClient)
-
-  const nestJsDataProvider: DataProvider = {
-    ...simpleProvider,
-  }
-
-  const filesProxyHandler: ProxyHandler<DataProvider> = {
-    get: function (target, prop, receiver) {
-      if (prop === 'create' || prop === 'update') {
-        return function () {
-          const data = arguments?.[1]?.data
-          if (hasAnyFile(data)) {
-            return createOrUpdateFileResource(...arguments, prop, URL)
-          } else {
-            return target[prop].apply(this, arguments)
-          }
-        }
+  constructor(URL: string, options: fetchUtils.Options = {}) {
+    this.URL = URL
+    this.httpClient = (url: string, clientOptions: fetchUtils.Options = {}) => {
+      if (!clientOptions.headers) {
+        clientOptions.headers = new Headers({ Accept: 'application/json' })
       }
-      return Reflect.get(target, prop, receiver)
-    },
+      // @ts-ignore
+      clientOptions.headers.set('react-admin-agent', true)
+      return fetchUtils.fetchJson(url, { ...clientOptions, ...options })
+    }
+
+    this.provider = simpleRestProvider(URL, this.httpClient)
   }
 
-  return new Proxy(nestJsDataProvider, filesProxyHandler)
+  getList<RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetListParams,
+  ): Promise<GetListResult<RecordType>> {
+    return this.provider.getList(resource, params)
+  }
+
+  getOne<RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetOneParams<any>,
+  ): Promise<GetOneResult<RecordType>> {
+    return this.provider.getOne(resource, params)
+  }
+
+  getMany<RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetManyParams,
+  ): Promise<GetManyResult<RecordType>> {
+    return this.provider.getMany(resource, params)
+  }
+
+  getManyReference<RecordType extends RaRecord = any>(
+    resource: string,
+    params: GetManyReferenceParams,
+  ): Promise<GetManyReferenceResult<RecordType>> {
+    return this.provider.getManyReference(resource, params)
+  }
+
+  private hasAnyFile(data: any) {
+    return (
+      data &&
+      Object.values(data).some((value: any) => {
+        if (Array.isArray(value) && value[0]?.rawFile instanceof File) return true
+        return typeof value === 'object' && value?.rawFile instanceof File
+      })
+    )
+  }
+
+  private createOrUpdateFormData(resource: string, params: any, method: string = 'POST') {
+    const formData = new FormData()
+    Object.entries(params?.data).forEach(([key, value]: [string, any]) => {
+      if (Array.isArray(value) && value[0]?.rawFile instanceof File) {
+        value.forEach((file: any) => {
+          formData.append(`${key}[]`, file.rawFile)
+        })
+      } else if (typeof value === 'object' && value?.rawFile instanceof File) {
+        formData.append(key, value.rawFile)
+      } else {
+        formData.append(key, value)
+      }
+    })
+
+    let url = `${this.URL}/${resource}`
+    console.log('url', url)
+    if (method === 'put') {
+      method = 'PUT'
+      url += `/${params.id}`
+    }
+
+    return this.httpClient(url, {
+      method: method,
+      body: formData,
+    }).then(({ json }) => ({
+      data: json,
+    }))
+  }
+
+  update<RecordType extends RaRecord = any>(
+    resource: string,
+    params: UpdateParams<any>,
+  ): Promise<UpdateResult<RecordType>> {
+    if (this.hasAnyFile(params.data)) {
+      return this.createOrUpdateFormData(resource, params, 'PUT')
+    }
+    return this.provider.update(resource, params)
+  }
+
+  updateMany<RecordType extends RaRecord = any>(
+    resource: string,
+    params: UpdateManyParams<any>,
+  ): Promise<UpdateManyResult<RecordType>> {
+    return this.provider.updateMany(resource, params)
+  }
+
+  create<RecordType extends RaRecord = any>(
+    resource: string,
+    params: CreateParams<any>,
+  ): Promise<CreateResult<RecordType>> {
+    console.log('params.data', params.data)
+    if (this.hasAnyFile(params.data)) {
+      return this.createOrUpdateFormData(resource, params, 'POST')
+    }
+    return this.provider.create(resource, params)
+  }
+
+  delete<RecordType extends RaRecord = any>(
+    resource: string,
+    params: DeleteParams<RecordType>,
+  ): Promise<DeleteResult<RecordType>> {
+    return this.provider.delete(resource, params)
+  }
+
+  deleteMany<RecordType extends RaRecord = any>(
+    resource: string,
+    params: DeleteManyParams<RecordType>,
+  ): Promise<DeleteManyResult<RecordType>> {
+    return this.provider.deleteMany(resource, params)
+  }
 }

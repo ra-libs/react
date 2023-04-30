@@ -45,6 +45,10 @@
 * [LocalSession](services/localsession.md)
 * [raDataRestProvider](services/radatarestprovider.md)
 
+## Providers
+
+* [DataProvider](providers/dataprovider.md)
+
 ## Validations
 
 * [minYear](validations/minyear.md)
