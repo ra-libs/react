@@ -1,3 +1,11 @@
+## [1.8.8](https://github.com/ra-libs/react/compare/v1.8.7...v1.8.8) (2023-04-30)
+
+
+### Bug Fixes
+
+* change HttpRequest return ([9d6ffd7](https://github.com/ra-libs/react/commit/9d6ffd78a5a29fb56c663e39426f3390b50f0217))
+* **services:** return axios response ([14f64f7](https://github.com/ra-libs/react/commit/14f64f75d3beb6dd561fc8d465b0f34463e68ae7))
+
 ## [1.8.7](https://github.com/ra-libs/react/compare/v1.8.6...v1.8.7) (2023-04-30)
 
 
