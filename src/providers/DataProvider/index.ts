@@ -95,7 +95,6 @@ export class DataProvider implements RaDataProvider {
     })
 
     let url = `${this.URL}/${resource}`
-    console.log('url', url)
     if (method === 'put') {
       method = 'PUT'
       url += `/${params.id}`
@@ -130,7 +129,6 @@ export class DataProvider implements RaDataProvider {
     resource: string,
     params: CreateParams<any>,
   ): Promise<CreateResult<RecordType>> {
-    console.log('params.data', params.data)
     if (this.hasAnyFile(params.data)) {
       return this.createOrUpdateFormData(resource, params, 'POST')
     }
