@@ -1,3 +1,10 @@
+## [1.8.7](https://github.com/ra-libs/react/compare/v1.8.6...v1.8.7) (2023-04-30)
+
+
+### Bug Fixes
+
+* remove console.log ([4f14b9a](https://github.com/ra-libs/react/commit/4f14b9a8dbc21c9b13ef2b022b4ba636c792e34d))
+
 ## [1.8.6](https://github.com/ra-libs/react/compare/v1.8.5...v1.8.6) (2023-04-30)
 
 
