@@ -1,3 +1,10 @@
+## [1.8.6](https://github.com/ra-libs/react/compare/v1.8.5...v1.8.6) (2023-04-30)
+
+
+### Bug Fixes
+
+* **provider:** remove storage from DataProvider ([8b574fa](https://github.com/ra-libs/react/commit/8b574fac611810c1f81beaedfceb1e44eacaface))
+
 ## [1.8.5](https://github.com/ra-libs/react/compare/v1.8.4...v1.8.5) (2023-04-18)
 
 
