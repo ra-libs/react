@@ -58,7 +58,7 @@ async function getPlacePredictions(
   let url = `${API_URL}?${API_SEARCH_FIELD}=${params.search}`
   if (params.mapType) url += `&${API_MAP_TYPE}=${params.mapType}`
   const results = await HttpRequest.get(url)
-  callback(results)
+  callback(results.data)
 }
 
 const filter = createFilterOptions<PlaceType>()

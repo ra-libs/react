@@ -1,29 +1,33 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 export class HttpRequest {
-  static async get(URL: string, options: AxiosRequestConfig = {}) {
-    return HttpRequest.request(URL, 'get', options)
+  static async get<T = any>(URL: string, options: AxiosRequestConfig = {}) {
+    return HttpRequest.request<T>(URL, 'get', options)
   }
 
-  static async post(URL: string, body: any = {}, options: AxiosRequestConfig = {}) {
-    return HttpRequest.request(URL, 'post', {
+  static async post<T = any>(URL: string, body: any = {}, options: AxiosRequestConfig = {}) {
+    return HttpRequest.request<T>(URL, 'post', {
       data: body,
       ...options,
     })
   }
 
-  static async put(URL: string, body: any = {}, options: AxiosRequestConfig = {}) {
-    return HttpRequest.request(URL, 'put', {
+  static async put<T = any>(URL: string, body: any = {}, options: AxiosRequestConfig = {}) {
+    return HttpRequest.request<T>(URL, 'put', {
       data: body,
       ...options,
     })
   }
 
-  static async delete(URL: string, options: AxiosRequestConfig = {}) {
-    return HttpRequest.request(URL, 'delete', options)
+  static async delete<T = any>(URL: string, options: AxiosRequestConfig = {}) {
+    return HttpRequest.request<T>(URL, 'delete', options)
   }
 
-  static async request(URL: string, method: string, options: AxiosRequestConfig): Promise<AxiosResponse> {
+  static async request<T = any>(
+    URL: string,
+    method: string,
+    options: AxiosRequestConfig,
+  ): Promise<AxiosResponse<T, any>> {
     try {
       const response = await axios.request({
         url: URL,
