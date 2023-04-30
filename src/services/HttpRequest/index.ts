@@ -1,4 +1,4 @@
-import axios, { AxiosRequestConfig } from 'axios'
+import axios, { AxiosRequestConfig, AxiosResponse } from 'axios'
 
 export class HttpRequest {
   static async get(URL: string, options: AxiosRequestConfig = {}) {
@@ -23,14 +23,14 @@ export class HttpRequest {
     return HttpRequest.request(URL, 'delete', options)
   }
 
-  static async request(URL: string, method: string, options: AxiosRequestConfig) {
+  static async request(URL: string, method: string, options: AxiosRequestConfig): Promise<AxiosResponse> {
     try {
       const response = await axios.request({
         url: URL,
         method,
         ...options,
       })
-      return response.data
+      return response
     } catch (error) {
       console.error(error)
       throw error
