@@ -1,4 +1,3 @@
-import { TextField } from '@mui/material'
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import React from 'react'
@@ -52,17 +51,15 @@ export function TimeInput(props: TimeInputProps) {
         {...field}
         label={label}
         onChange={handleValueChange}
-        renderInput={(params) => (
-          <TextField
-            {...rest}
-            {...params}
-            id={id}
-            required={isRequired}
-            margin={margin}
-            error={hasError}
-            helperText={hasError ? translate(error?.message || '') : ''}
-          />
-        )}
+        slotProps={{
+          textField: {
+            id: id,
+            required: isRequired,
+            margin: margin,
+            error: hasError,
+            helperText: hasError ? translate(error?.message || '') : '',
+          },
+        }}
       />
     </LocalizationProvider>
   )

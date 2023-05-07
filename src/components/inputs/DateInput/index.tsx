@@ -1,8 +1,7 @@
 import React from 'react'
 import { DateInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
 
-import TextField from '@mui/material/TextField'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { useFormContext } from 'react-hook-form'
@@ -30,24 +29,22 @@ export function DateInput(props: DateInputProps) {
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${field.name}`)
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>
+    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={adapterLocale}>
       <DatePicker
         {...field}
         label={label}
         onChange={(newValue) => {
           setValue(props.source, newValue, { shouldDirty: true })
         }}
-        renderInput={(params) => (
-          <TextField
-            {...propsRest}
-            {...params}
-            id={id}
-            required={isRequired}
-            margin={margin}
-            error={hasError}
-            helperText={hasError ? translate(error?.message || '') : ''}
-          />
-        )}
+        slotProps={{
+          textField: {
+            id: id,
+            required: isRequired,
+            margin: margin,
+            error: hasError,
+            helperText: hasError ? translate(error?.message || '') : '',
+          },
+        }}
       />
     </LocalizationProvider>
   )
