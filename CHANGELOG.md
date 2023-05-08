@@ -1,3 +1,10 @@
+## [1.8.10](https://github.com/ra-libs/react/compare/v1.8.9...v1.8.10) (2023-05-08)
+
+
+### Bug Fixes
+
+* use date-fns adapter for date inputs ([5f7e7d4](https://github.com/ra-libs/react/commit/5f7e7d4f61a53e6586c2a6b154fc693975c81d6e))
+
 ## [1.8.9](https://github.com/ra-libs/react/compare/v1.8.8...v1.8.9) (2023-05-08)
 
 
