@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers'
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { DateInputProps, Labeled, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 import { useDateLocale } from '../../../hooks/'
@@ -21,7 +21,7 @@ export function TimeField(props: LabeledFieldProps<TimeFieldProps>) {
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${source}`)
 
   const field = (
-    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={adapterLocale}>
+    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>
       <TimePicker label={label} value={value} readOnly onChange={() => {}} />
     </LocalizationProvider>
   )

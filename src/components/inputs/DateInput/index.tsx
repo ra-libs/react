@@ -1,7 +1,7 @@
 import React from 'react'
 import { DateInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
 
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { useFormContext } from 'react-hook-form'
@@ -29,7 +29,7 @@ export function DateInput(props: DateInputProps) {
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${field.name}`)
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={adapterLocale}>
+    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>
       <DatePicker
         {...field}
         label={label}
