@@ -1,3 +1,10 @@
+## [1.8.12](https://github.com/ra-libs/react/compare/v1.8.11...v1.8.12) (2023-05-08)
+
+
+### Bug Fixes
+
+* **fields:** TimeField ([5e4dfd4](https://github.com/ra-libs/react/commit/5e4dfd448496ffa70904d0ad227478eb856a70a5))
+
 ## [1.8.11](https://github.com/ra-libs/react/compare/v1.8.10...v1.8.11) (2023-05-08)
 
 
