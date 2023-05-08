@@ -1,3 +1,10 @@
+## [1.8.9](https://github.com/ra-libs/react/compare/v1.8.8...v1.8.9) (2023-05-08)
+
+
+### Bug Fixes
+
+* update deps ([61d57e5](https://github.com/ra-libs/react/commit/61d57e5539262b748335f312ce022fb4330ea1f7))
+
 ## [1.8.8](https://github.com/ra-libs/react/compare/v1.8.7...v1.8.8) (2023-04-30)
 
 
