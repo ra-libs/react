@@ -5,7 +5,8 @@ import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { useFormContext } from 'react-hook-form'
-import { useDateLocale } from '../../../hooks/locales'
+import { parseISO } from 'date-fns'
+import { useDateLocale } from '../../../hooks'
 
 export function DateInput(props: DateInputProps) {
   const translate = useTranslate()
@@ -28,10 +29,13 @@ export function DateInput(props: DateInputProps) {
   const resource = useResourceContext()
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${field.name}`)
 
+  const value = field.value && typeof field.value === 'string' ? parseISO(field.value) : field.value
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>
       <DatePicker
         {...field}
+        value={value}
         label={label}
         onChange={(newValue) => {
           setValue(props.source, newValue, { shouldDirty: true })

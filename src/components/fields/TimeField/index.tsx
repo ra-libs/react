@@ -4,6 +4,8 @@ import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers'
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
 import { DateInputProps, Labeled, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
+
+import { parseISO } from 'date-fns'
 import { useDateLocale } from '../../../hooks/'
 
 interface TimeFieldProps extends DateInputProps {}
@@ -17,8 +19,10 @@ export function TimeField(props: LabeledFieldProps<TimeFieldProps>) {
 
   const adapterLocale = useDateLocale()
 
-  const value = record?.[source]
+  const sourceValue = record?.[source]
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${source}`)
+
+  const value = sourceValue && typeof sourceValue === 'string' ? parseISO(sourceValue) : sourceValue
 
   const field = (
     <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>

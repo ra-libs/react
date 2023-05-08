@@ -4,6 +4,7 @@ import React from 'react'
 
 import { DateInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
 import { useFormContext } from 'react-hook-form'
+import { parseISO } from 'date-fns'
 import { useDateLocale } from '../../../hooks'
 
 interface TimeInputProps extends DateInputProps {
@@ -45,10 +46,14 @@ export function TimeInput(props: TimeInputProps) {
       setFormValue(props.source, newValue, { shouldDirty: true })
     }
   }
+
+  const value = field.value && typeof field.value === 'string' ? parseISO(field.value) : field.value
+
   return (
     <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>
       <TimePicker
         {...field}
+        value={value}
         label={label}
         onChange={handleValueChange}
         slotProps={{
