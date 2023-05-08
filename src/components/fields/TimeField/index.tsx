@@ -1,34 +1,22 @@
 import React from 'react'
 
-import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
-import { DateInputProps, Labeled, useRecordContext, useResourceContext, useTranslate } from 'react-admin'
+import { DateFieldProps, Labeled, DateField as RaDateField } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 
-import { parseISO } from 'date-fns'
-import { useDateLocale } from '../../../hooks/'
-
-interface TimeFieldProps extends DateInputProps {}
+interface TimeFieldProps extends DateFieldProps {}
 
 export function TimeField(props: LabeledFieldProps<TimeFieldProps>) {
-  const record = useRecordContext()
-  const resource = useResourceContext()
-
-  const translate = useTranslate()
-  const { source, useLabel } = props
-
-  const adapterLocale = useDateLocale()
-
-  const sourceValue = record?.[source]
-  const label = props.label ? props.label : translate(`resources.${resource}.fields.${source}`)
-
-  const value = sourceValue && typeof sourceValue === 'string' ? parseISO(sourceValue) : sourceValue
-
+  const { useLabel, ...rest } = props
   const field = (
-    <LocalizationProvider dateAdapter={AdapterDateFns} adapterLocale={adapterLocale}>
-      <TimePicker label={label} value={value} readOnly onChange={() => {}} />
-    </LocalizationProvider>
+    <RaDateField
+      {...rest}
+      showDate={false}
+      showTime
+      options={{
+        hour: '2-digit',
+        minute: '2-digit',
+      }}
+    />
   )
-
-  return useLabel ? <Labeled label={label}>{field}</Labeled> : <>{field}</>
+  return useLabel ? <Labeled>{field}</Labeled> : <>{field}</>
 }
