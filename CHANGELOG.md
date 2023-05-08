@@ -1,3 +1,10 @@
+## [1.8.11](https://github.com/ra-libs/react/compare/v1.8.10...v1.8.11) (2023-05-08)
+
+
+### Bug Fixes
+
+* use parseISO for date ([4c2cb87](https://github.com/ra-libs/react/commit/4c2cb876955b6ebe87a6443b9f51ff97e00de134))
+
 ## [1.8.10](https://github.com/ra-libs/react/compare/v1.8.9...v1.8.10) (2023-05-08)
 
 
