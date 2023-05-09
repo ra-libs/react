@@ -2,7 +2,7 @@ import React from 'react'
 import { SelectInput, SelectInputProps } from 'react-admin'
 import { useCountries } from '../../../hooks/countries'
 
-interface CountryInputProps extends SelectInputProps {}
+type CountryInputProps = SelectInputProps
 
 export function CountryInput(props: CountryInputProps) {
   const { source = 'country', defaultValue, ...rest } = props

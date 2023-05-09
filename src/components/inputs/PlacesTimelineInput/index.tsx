@@ -144,7 +144,7 @@ export default function PlacesTimelineInput(props: PlacesTimelineInputProps) {
   }
 
   const handleAutoCompleteOnChange = (_: any, newValues: (string | PlaceType)[]) => {
-    let newValuePlaces: PlaceType[] = newValues.map((newValue) => {
+    const newValuePlaces: PlaceType[] = newValues.map((newValue) => {
       if (typeof newValue === 'string') return { description: newValue }
       if (newValue && newValue.inputValue) return { description: newValue.inputValue }
       return newValue

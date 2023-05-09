@@ -90,6 +90,7 @@ export function MapsInput(props: MapsInputProps) {
       const value = { description: field.value } as PlaceType
       setValue(value)
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   useEffect(() => {

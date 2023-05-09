@@ -15,7 +15,7 @@ export function TimeInput(props: TimeInputProps) {
   const translate = useTranslate()
   const { setValue: setFormValue } = useFormContext()
 
-  const { margin = 'dense', dateSource, ...rest } = props
+  const { margin = 'dense', dateSource } = props
 
   const adapterLocale = useDateLocale()
   const {

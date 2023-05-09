@@ -3,7 +3,7 @@ import { Labeled, SelectField, SelectFieldProps } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 import { useCountries } from '../../../hooks/countries'
 
-interface CountryFieldProps extends SelectFieldProps {}
+type CountryFieldProps = SelectFieldProps
 
 export function CountryField(props: LabeledFieldProps<CountryFieldProps>) {
   const { source = 'country', useLabel, ...rest } = props

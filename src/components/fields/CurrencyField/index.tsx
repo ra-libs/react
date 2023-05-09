@@ -3,7 +3,7 @@ import { Labeled, SelectField, SelectFieldProps } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 import { useCurrencies } from '../../../hooks/currencies'
 
-interface CurrencyFieldProps extends SelectFieldProps {}
+type CurrencyFieldProps = SelectFieldProps
 
 export function CurrencyField(props: LabeledFieldProps<CurrencyFieldProps>) {
   const { source = 'currency', useLabel, ...rest } = props
