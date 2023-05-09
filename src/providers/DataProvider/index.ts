@@ -80,7 +80,7 @@ export class DataProvider implements RaDataProvider {
     )
   }
 
-  private createOrUpdateFormData(resource: string, params: any, method: string = 'POST') {
+  private createOrUpdateFormData(resource: string, params: any, method = 'POST') {
     const formData = new FormData()
     Object.entries(params?.data).forEach(([key, value]: [string, any]) => {
       if (Array.isArray(value) && value[0]?.rawFile instanceof File) {

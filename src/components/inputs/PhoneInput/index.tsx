@@ -3,7 +3,7 @@ import { MuiTelInput, matchIsValidTel } from 'mui-tel-input'
 import { TextInputProps, useInput, useLocaleState, useResourceContext, useTranslate } from 'react-admin'
 import { useFormContext } from 'react-hook-form'
 
-interface PhoneInputProps extends TextInputProps {}
+type PhoneInputProps = TextInputProps
 
 export function PhoneInput(props: PhoneInputProps) {
   const [locale] = useLocaleState()
@@ -33,6 +33,7 @@ export function PhoneInput(props: PhoneInputProps) {
 
   useEffect(() => {
     handleChange(field.value)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (

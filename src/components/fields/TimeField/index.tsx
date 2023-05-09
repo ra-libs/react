@@ -3,7 +3,7 @@ import React from 'react'
 import { DateFieldProps, Labeled, DateField as RaDateField } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 
-interface TimeFieldProps extends DateFieldProps {}
+type TimeFieldProps = DateFieldProps
 
 export function TimeField(props: LabeledFieldProps<TimeFieldProps>) {
   const { useLabel, ...rest } = props

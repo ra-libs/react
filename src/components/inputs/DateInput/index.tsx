@@ -14,7 +14,7 @@ export function DateInput(props: DateInputProps) {
   const { setValue } = useFormContext()
   const adapterLocale = useDateLocale()
 
-  const { margin = 'dense', ...propsRest } = props
+  const { margin = 'dense' } = props
 
   const {
     field,
