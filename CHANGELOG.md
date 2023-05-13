@@ -1,3 +1,10 @@
+## [1.8.13](https://github.com/ra-libs/react/compare/v1.8.12...v1.8.13) (2023-05-13)
+
+
+### Bug Fixes
+
+* **deps:** bump @mui/material from 5.12.3 to 5.13.0 ([9c666a0](https://github.com/ra-libs/react/commit/9c666a0cca7b87a0cfe991d7870963c032b1cdb5))
+
 ## [1.8.12](https://github.com/ra-libs/react/compare/v1.8.11...v1.8.12) (2023-05-08)
 
 
