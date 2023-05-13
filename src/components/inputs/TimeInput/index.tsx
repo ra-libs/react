@@ -63,6 +63,7 @@ export function TimeInput(props: TimeInputProps) {
             margin: margin,
             error: hasError,
             helperText: hasError ? translate(error?.message || '') : '',
+            fullWidth: props.fullWidth,
           },
         }}
       />
