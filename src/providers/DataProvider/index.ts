@@ -83,9 +83,13 @@ export class DataProvider implements RaDataProvider {
   private createOrUpdateFormData(resource: string, params: any, method = 'POST') {
     const formData = new FormData()
     Object.entries(params?.data).forEach(([key, value]: [string, any]) => {
-      if (Array.isArray(value) && value[0]?.rawFile instanceof File) {
-        value.forEach((file: any) => {
-          formData.append(`${key}[]`, file.rawFile)
+      if (Array.isArray(value)) {
+        value.forEach((item: any) => {
+          if (item.rawFile instanceof File) {
+            formData.append(`${key}[]`, item.rawFile)
+          } else {
+            formData.append(`${key}[]`, item)
+          }
         })
       } else if (typeof value === 'object' && value?.rawFile instanceof File) {
         formData.append(key, value.rawFile)
