@@ -1,3 +1,10 @@
+## [1.8.14](https://github.com/ra-libs/react/compare/v1.8.13...v1.8.14) (2023-05-13)
+
+
+### Bug Fixes
+
+* **dataprovider:** add array element to formdata ([8dc55c8](https://github.com/ra-libs/react/commit/8dc55c86a19200a26e5f919b4349f2a32110bfa6))
+
 ## [1.8.13](https://github.com/ra-libs/react/compare/v1.8.12...v1.8.13) (2023-05-13)
 
 
