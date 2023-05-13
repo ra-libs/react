@@ -47,6 +47,7 @@ export function DateInput(props: DateInputProps) {
             margin: margin,
             error: hasError,
             helperText: hasError ? translate(error?.message || '') : '',
+            fullWidth: props.fullWidth,
           },
         }}
       />
