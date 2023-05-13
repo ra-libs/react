@@ -1,3 +1,11 @@
+## [1.8.15](https://github.com/ra-libs/react/compare/v1.8.14...v1.8.15) (2023-05-13)
+
+
+### Bug Fixes
+
+* **inputs:** pass fullWidth prop to dateInput ([580ba5b](https://github.com/ra-libs/react/commit/580ba5b2778f23ce3efd0e07d2c85e27a78c4a23))
+* **inputs:** pass fullWidth prop to timeInput ([8e0de88](https://github.com/ra-libs/react/commit/8e0de88e020ac6d4e0df40689acb4982e80960e7))
+
 ## [1.8.14](https://github.com/ra-libs/react/compare/v1.8.13...v1.8.14) (2023-05-13)
 
 
