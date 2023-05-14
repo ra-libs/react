@@ -1,3 +1,10 @@
+## [1.8.16](https://github.com/ra-libs/react/compare/v1.8.15...v1.8.16) (2023-05-14)
+
+
+### Bug Fixes
+
+* **dataprovider:** put method ([c381b03](https://github.com/ra-libs/react/commit/c381b03c21595527a11fe094393470171b1ae351))
+
 ## [1.8.15](https://github.com/ra-libs/react/compare/v1.8.14...v1.8.15) (2023-05-13)
 
 
