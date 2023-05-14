@@ -82,6 +82,7 @@ export class DataProvider implements RaDataProvider {
 
   private createOrUpdateFormData(resource: string, params: any, method = 'POST') {
     const formData = new FormData()
+    console.log('data : ', params?.data)
     Object.entries(params?.data).forEach(([key, value]: [string, any]) => {
       if (Array.isArray(value)) {
         value.forEach((item: any) => {
@@ -99,8 +100,7 @@ export class DataProvider implements RaDataProvider {
     })
 
     let url = `${this.URL}/${resource}`
-    if (method === 'put') {
-      method = 'PUT'
+    if (method === 'PUT') {
       url += `/${params.id}`
     }
 
