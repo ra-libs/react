@@ -84,7 +84,7 @@
     "react-admin": "^4.10.2",
     "react-hook-form": "^7.43.9",
     "react-imask": "^6.6.1",
-    "react-number-format": "^5.1.4",
+    "react-number-format": "^5.2.0",
     "scheduler": "^0.23.0"
   },
   "peerDependencies": {
