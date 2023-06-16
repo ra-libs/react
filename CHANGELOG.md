@@ -1,3 +1,11 @@
+## [1.8.19](https://github.com/ra-libs/react/compare/v1.8.18...v1.8.19) (2023-06-16)
+
+
+### Bug Fixes
+
+* ci release user ([d0e8732](https://github.com/ra-libs/react/commit/d0e873231f389c603cfa1bad1e7ddaf9d253847e))
+* update deps ([#29](https://github.com/ra-libs/react/issues/29)) ([83d73b7](https://github.com/ra-libs/react/commit/83d73b721f7ce1a2ba70952f791c0b0024b7e7f8))
+
 ## [1.8.18](https://github.com/ra-libs/react/compare/v1.8.17...v1.8.18) (2023-05-27)
 
 
