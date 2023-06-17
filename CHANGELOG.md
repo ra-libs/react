@@ -1,3 +1,10 @@
+## [1.8.20](https://github.com/ra-libs/react/compare/v1.8.19...v1.8.20) (2023-06-17)
+
+
+### Bug Fixes
+
+* export PlacesTimelineInput ([9a1ad1f](https://github.com/ra-libs/react/commit/9a1ad1f38c55d4425495777eda97ae4466885a01))
+
 ## [1.8.19](https://github.com/ra-libs/react/compare/v1.8.18...v1.8.19) (2023-06-16)
 
 
