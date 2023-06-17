@@ -63,7 +63,7 @@ async function getPlacePredictions(
 
 const filter = createFilterOptions<PlaceType>()
 
-export default function PlacesTimelineInput(props: PlacesTimelineInputProps) {
+export function PlacesTimelineInput(props: PlacesTimelineInputProps) {
   const [values, setValues] = React.useState<PlaceType[]>([])
   const [inputValue, setInputValue] = React.useState('')
   const [options, setOptions] = React.useState<readonly PlaceType[]>([])
