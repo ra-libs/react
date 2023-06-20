@@ -83,7 +83,7 @@
     "ra-data-simple-rest": "^4.11.3",
     "react-admin": "^4.11.3",
     "react-hook-form": "^7.44.3",
-    "react-imask": "^6.6.3",
+    "react-imask": "^7.0.0",
     "react-number-format": "^5.2.2",
     "scheduler": "^0.23.0"
   },
