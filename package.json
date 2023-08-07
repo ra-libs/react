@@ -82,7 +82,7 @@
     "mui-tel-input": "^3.2.0",
     "ra-data-simple-rest": "^4.11.4",
     "react-admin": "^4.11.4",
-    "react-hook-form": "^7.45.0",
+    "react-hook-form": "^7.45.4",
     "react-imask": "^7.0.1",
     "react-number-format": "^5.2.2",
     "scheduler": "^0.23.0"
