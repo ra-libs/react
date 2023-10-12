@@ -85,7 +85,8 @@
     "react-hook-form": "^7.45.0",
     "react-imask": "^7.0.1",
     "react-number-format": "^5.2.2",
-    "scheduler": "^0.23.0"
+    "scheduler": "^0.23.0",
+    "timezones.json": "^1.7.1"
   },
   "peerDependencies": {
     "react": ">=16"
