@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/ra-libs/react/compare/v1.8.21...v1.9.0) (2023-10-12)
+
+
+### Features
+
+* add timezone components ([334ef68](https://github.com/ra-libs/react/commit/334ef68a847b20401400b092c4b56665cdd40e6f))
+
 ## [1.8.21](https://github.com/ra-libs/react/compare/v1.8.20...v1.8.21) (2023-06-26)
 
 
