@@ -1,3 +1,10 @@
+## [1.11.8](https://github.com/ra-libs/react/compare/v1.11.7...v1.11.8) (2023-10-12)
+
+
+### Bug Fixes
+
+* tz input source ([4601fce](https://github.com/ra-libs/react/commit/4601fce1dcb7dd7ac4e7c1108f42909ebc371966))
+
 ## [1.11.7](https://github.com/ra-libs/react/compare/v1.11.6...v1.11.7) (2023-10-12)
 
 
