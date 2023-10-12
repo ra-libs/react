@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react'
-import Box from '@mui/material/Box'
-import TextField from '@mui/material/TextField'
-import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
 import LocationOnIcon from '@mui/icons-material/LocationOn'
+import { debounce } from '@mui/material'
+import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete'
+import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
+import TextField from '@mui/material/TextField'
 import Typography from '@mui/material/Typography'
 import parse from 'autosuggest-highlight/parse'
-import { throttle } from 'lodash'
-
+import React, { useEffect } from 'react'
 import { TextInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
-import { HttpRequest } from '../../../services'
 import { useFormContext } from 'react-hook-form'
+
+import { HttpRequest } from '../../../services'
 
 interface MapsInputProps extends TextInputProps {
   source: string
@@ -73,7 +73,7 @@ export function MapsInput(props: MapsInputProps) {
 
   const fetch = React.useMemo(
     () =>
-      throttle((input: string, callback: (results?: readonly PlaceType[]) => void) => {
+      debounce((input: string, callback: (results?: readonly PlaceType[]) => void) => {
         getPlacePredictions(
           API_URL,
           API_SEARCH_FIELD,
@@ -81,7 +81,7 @@ export function MapsInput(props: MapsInputProps) {
           { search: input, mapType: props.mapType },
           callback,
         )
-      }, 200),
+      }, 400),
     [],
   )
 
