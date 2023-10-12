@@ -50,7 +50,7 @@ export function TzTimeInput(props: TzTimeInputProps) {
   })
 
   const handleValueChange = (newValue: Dayjs | null) => {
-    if (dateSourceInput.id !== id) {
+    if (dateSourceInput.id && dateSourceInput.id !== id) {
       const dateSourceValue = dateSourceInput.field.value as Date
       newValue?.set('year', dateSourceValue.getUTCFullYear())
       newValue?.set('month', dateSourceValue.getUTCMonth())
