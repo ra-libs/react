@@ -1,3 +1,10 @@
+## [1.9.1](https://github.com/ra-libs/react/compare/v1.9.0...v1.9.1) (2023-10-12)
+
+
+### Bug Fixes
+
+* version sync ([4b9226a](https://github.com/ra-libs/react/commit/4b9226a2b85dcbf0582835563c65f475979c0e30))
+
 # [1.9.0](https://github.com/ra-libs/react/compare/v1.8.21...v1.9.0) (2023-10-12)
 
 
