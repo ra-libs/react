@@ -43,7 +43,7 @@ export function TzDateInput(props: TzDateInputProps) {
   const [value, setValue] = React.useState<Dayjs | null>()
 
   const handleValueChange = (newValue: Dayjs | null) => {
-    setFormValue(field.name, newValue?.toISOString(), { shouldDirty: true })
+    setFormValue(props.source, newValue?.toISOString(), { shouldDirty: true })
   }
 
   useEffect(() => {

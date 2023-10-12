@@ -57,7 +57,7 @@ export function TzTimeInput(props: TzTimeInputProps) {
       newValue?.set('date', dateSourceValue.getUTCDate())
     }
 
-    setFormValue(field.name, newValue?.toISOString(), {
+    setFormValue(props.source, newValue?.toISOString(), {
       shouldDirty: true,
     })
   }
