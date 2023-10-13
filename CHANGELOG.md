@@ -1,3 +1,10 @@
+## [1.11.9](https://github.com/ra-libs/react/compare/v1.11.8...v1.11.9) (2023-10-13)
+
+
+### Bug Fixes
+
+* update date based on timezone update ([872d9cd](https://github.com/ra-libs/react/commit/872d9cd7ac697f77b0ebefb1eefbfdb7cf7a40fd))
+
 ## [1.11.8](https://github.com/ra-libs/react/compare/v1.11.7...v1.11.8) (2023-10-12)
 
 
