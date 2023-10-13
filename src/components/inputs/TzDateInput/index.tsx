@@ -53,6 +53,15 @@ export function TzDateInput(props: TzDateInputProps) {
     }
   }, [field.value])
 
+  useEffect(() => {
+    if (timezoneSourceInput.field.value && value) {
+      const tzDate = dayjs.tz(field.value, timezoneSourceInput.field.value)
+      setFormValue(props.source, tzDate?.toISOString(), {
+        shouldDirty: true,
+      })
+    }
+  }, [timezoneSourceInput.field.value])
+
   return (
     <LocalizationProvider dateAdapter={AdapterDayjs} adapterLocale={adapterLocale}>
       <DatePicker
