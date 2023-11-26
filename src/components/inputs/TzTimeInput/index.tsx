@@ -37,7 +37,7 @@ export function TzTimeInput(props: TzTimeInputProps) {
     source: props.timezoneSource,
   })
 
-  const [value, setValue] = React.useState<Dayjs | null>(null)
+  const [value, setValue] = React.useState<Dayjs>(dayjs.utc())
 
   const hasError = (isTouched || isSubmitted) && invalid
 
@@ -61,6 +61,15 @@ export function TzTimeInput(props: TzTimeInputProps) {
       shouldDirty: true,
     })
   }
+
+  useEffect(() => {
+    console.log('TzTimeInput: dateSourceInput.field.value: ', dateSourceInput.field.value)
+    if (!field.value && !dateSourceInput.field.value) {
+      setFormValue(props.source, dayjs.utc(), {
+        shouldDirty: true,
+      })
+    }
+  }, [])
 
   useEffect(() => {
     if (field.value) {

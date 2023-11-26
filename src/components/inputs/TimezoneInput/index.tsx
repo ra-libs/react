@@ -67,6 +67,9 @@ export function TimezoneInput(props: DateInputProps) {
       handleHomeEndKeys
       value={optionValue}
       onChange={handleValueChange}
+      isOptionEqualToValue={(option, value) => {
+        return option.value == value.value
+      }}
       renderInput={(params) => (
         <TextField
           {...params}

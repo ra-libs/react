@@ -40,16 +40,25 @@ export function TzDateInput(props: TzDateInputProps) {
     source: props.timezoneSource,
   })
 
-  const [value, setValue] = React.useState<Dayjs | null>()
+  const [value, setValue] = React.useState<Dayjs>(dayjs.utc())
 
   const handleValueChange = (newValue: Dayjs | null) => {
     setFormValue(props.source, newValue?.toISOString(), { shouldDirty: true })
   }
 
   useEffect(() => {
+    if (!field.value) {
+      setFormValue(props.source, dayjs.utc(), {
+        shouldDirty: true,
+      })
+    }
+  }, [])
+
+  useEffect(() => {
     if (field.value) {
       const date = dayjs.utc(field.value)
-      setValue(date.tz(timezoneSourceInput.field.value))
+      if (timezoneSourceInput.field.value) setValue(date.tz(timezoneSourceInput.field.value))
+      else setValue(date)
     }
   }, [field.value])
 
