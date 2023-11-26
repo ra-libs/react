@@ -1,3 +1,11 @@
+## [1.11.10](https://github.com/ra-libs/react/compare/v1.11.9...v1.11.10) (2023-11-26)
+
+
+### Bug Fixes
+
+* tz fields initial value ([bd73517](https://github.com/ra-libs/react/commit/bd735177abb1bd1cc357e4a18fe249bbaccffaea))
+* update deps ([19c15b3](https://github.com/ra-libs/react/commit/19c15b3ca6b1a9b384248024e15407bcd740d3af))
+
 ## [1.11.9](https://github.com/ra-libs/react/compare/v1.11.8...v1.11.9) (2023-10-13)
 
 
