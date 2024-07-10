@@ -36,17 +36,5 @@ export default [
         },
       ],
     },
-    settings: {
-      react: {
-        version: 'detect',
-      },
-    },
-    env: {
-      browser: true,
-      node: true,
-    },
-    globals: {
-      JSX: true,
-    },
   },
 ]

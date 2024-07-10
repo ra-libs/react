@@ -96,7 +96,7 @@ export function PlacesTimelineInput(props: PlacesTimelineInputProps) {
 
   useEffect(() => {
     if (field.value && Array.isArray(field.value) && field.value.length > 0) {
-      const values: PlaceType[] = field.value.map((value) => ({ description: value } as PlaceType))
+      const values: PlaceType[] = field.value.map((value) => ({ description: value }) as PlaceType)
       setValues(values)
     }
   }, [])
