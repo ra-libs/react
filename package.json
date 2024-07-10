@@ -86,7 +86,7 @@
     "lodash": "^4.17.21",
     "loose-envify": "^1.4.0",
     "mui-image": "^1.0.7",
-    "mui-tel-input": "^4.0.1",
+    "mui-tel-input": "^5.1.2",
     "ra-data-simple-rest": "^4.16.1",
     "react-admin": "^4.16.1",
     "react-hook-form": "^7.52.1",
