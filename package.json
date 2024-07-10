@@ -74,6 +74,7 @@
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.16.0",
     "@mui/lab": "^5.0.0-alpha.171",
     "@mui/material": "^5.16.0",
     "@mui/x-date-pickers": "^7.9.0",
@@ -93,7 +94,8 @@
     "react-imask": "^7.6.1",
     "react-number-format": "^5.4.0",
     "scheduler": "^0.23.2",
-    "timezones.json": "^1.7.1"
+    "timezones.json": "^1.7.1",
+    "tslib": "^2.6.3"
   },
   "peerDependencies": {
     "react": ">=16"
