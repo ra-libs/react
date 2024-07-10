@@ -34,7 +34,8 @@ export class DataProvider implements RaDataProvider {
       if (!clientOptions.headers) {
         clientOptions.headers = new Headers({ Accept: 'application/json' })
       }
-      // @ts-ignore
+
+      // @ts-expect-error cant use set on Headers
       clientOptions.headers.set('react-admin-agent', true)
       return fetchUtils.fetchJson(url, { ...clientOptions, ...options })
     }

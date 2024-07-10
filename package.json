@@ -18,8 +18,8 @@
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "format": "prettier --write \"src/**/*.ts\"",
     "prelint": "pnpm prettier",
-    "lint": "eslint \"{**/*,*}.{js,ts,jsx,tsx}\"",
-    "lint:fix": "eslint --fix \"{**/*,*}.{js,ts,jsx,tsx}\"",
+    "lint": "eslint \"src/{**/*,*}.{js,ts,jsx,tsx}\"",
+    "lint:fix": "eslint --fix \"src/{**/*,*}.{js,ts,jsx,tsx}\"",
     "prettier": "prettier --write \"{src,tests,example/src}/**/*.{js,ts,jsx,tsx}\"",
     "test": "jest --config jestconfig.json",
     "presemantic-release": "pnpm build",
@@ -69,7 +69,7 @@
     "semantic-release": "^24.0.0",
     "ts-jest": "^29.2.0",
     "typescript": "^5.5.3",
-    "typescript-eslint": "^7.15.0"
+    "typescript-eslint": "^7.16.0"
   },
   "dependencies": {
     "@emotion/react": "^11.11.4",

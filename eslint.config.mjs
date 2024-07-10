@@ -4,8 +4,9 @@ import simpleImportSort from 'eslint-plugin-simple-import-sort'
 import unusedImports from 'eslint-plugin-unused-imports'
 import globals from 'globals'
 import tseslint from 'typescript-eslint'
-import reactHooksPlugin from 'eslint-plugin-react-hooks'
-import reactPlugin from 'eslint-plugin-react'
+import eslintPluginReact from 'eslint-plugin-react';
+import eslintPluginReactHooks from 'eslint-plugin-react-hooks';
+import { fixupPluginRules } from '@eslint/compat'
 
 export default [
   pluginJs.configs.recommended,
@@ -16,11 +17,12 @@ export default [
       'eslint-plugin-import': eslintPluginImport,
       'simple-import-sort': simpleImportSort,
       'unused-imports': unusedImports,
-      'eslint-plugin-react': reactPlugin,
-      'eslint-plugin-react-hooks': reactHooksPlugin,
+      'react': eslintPluginReact,
+      'react-hooks': fixupPluginRules(eslintPluginReactHooks),
     },
     languageOptions: {
-      globals: globals.browser,
+      parserOptions: { ecmaFeatures: { jsx: true } },
+      globals: { ...globals.browser },
     },
     rules: {
       '@typescript-eslint/no-explicit-any': 'off',
@@ -35,6 +37,7 @@ export default [
           properties: 'never',
         },
       ],
+      ...eslintPluginReactHooks.configs.recommended.rules,
     },
   },
 ]

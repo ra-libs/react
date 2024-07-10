@@ -1,5 +1,5 @@
 import React from 'react'
-import { Labeled, SelectField as RaSelectField,SelectFieldProps } from 'react-admin'
+import { Labeled, SelectField as RaSelectField, SelectFieldProps } from 'react-admin'
 
 import { LabeledFieldProps } from '../../../config'
 
