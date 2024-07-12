@@ -77,7 +77,7 @@
     "@mui/icons-material": "^5.16.0",
     "@mui/lab": "^5.0.0-alpha.171",
     "@mui/material": "^5.16.0",
-    "@mui/x-date-pickers": "^7.9.0",
+    "@mui/x-date-pickers": "^7.10.0",
     "autosuggest-highlight": "^3.3.4",
     "axios": "^1.7.2",
     "csstype": "^3.1.3",
