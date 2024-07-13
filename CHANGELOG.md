@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/ra-libs/react/compare/v2.0.0...v2.0.1) (2024-07-13)
+
+
+### Bug Fixes
+
+* build ([ca374f8](https://github.com/ra-libs/react/commit/ca374f8f7f2b514a974946c9c6c0b3326f92154b))
+
 # [2.0.0](https://github.com/ra-libs/react/compare/v1.11.12...v2.0.0) (2024-07-13)
 
 
