@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/ra-libs/react/compare/v1.11.12...v2.0.0) (2024-07-13)
+
+
+### Features
+
+* update react-admin from v4 to v5 ([8435b24](https://github.com/ra-libs/react/commit/8435b24a11e4fb1f800da1b3fbf833fdfc2a7ebc))
+
+
+### BREAKING CHANGES
+
+* upgrade react-admin to v5
+
 ## [1.11.12](https://github.com/ra-libs/react/compare/v1.11.11...v1.11.12) (2024-07-13)
 
 
