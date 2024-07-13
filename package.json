@@ -13,8 +13,7 @@
   "scripts": {
     "prepare": "pnpm build",
     "prebuild": "rimraf dist",
-    "build": "pnpm prebuild & pnpm build:esm && pnpm build:cjs && pnpm postbuild",
-    "postbuild": "copyfiles package.json README.md ./dist",
+    "build": "pnpm prebuild & pnpm build:esm && pnpm build:cjs",
     "build:esm": "tsc",
     "build:cjs": "tsc --module commonjs --outDir dist/cjs",
     "format": "prettier --write \"src/**/*.ts\"",
