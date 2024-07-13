@@ -4,7 +4,9 @@ import { Labeled, SelectField, SelectFieldProps } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 import { useCountries } from '../../../hooks/countries'
 
-type CountryFieldProps = SelectFieldProps
+type CountryFieldProps = Omit<SelectFieldProps, 'source'> & {
+  source?: string
+}
 
 export function CountryField(props: LabeledFieldProps<CountryFieldProps>) {
   const { source = 'country', useLabel, ...rest } = props
