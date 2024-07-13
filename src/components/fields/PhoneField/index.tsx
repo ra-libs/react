@@ -15,12 +15,13 @@ export function PhoneField(props: LabeledFieldProps<PhoneFieldProps>) {
 
   const [locale] = useLocaleState()
   const translate = useTranslate()
-
+  const theme = useTheme()
   const resource = useResourceContext()
+
+  if (!record) return null
+
   const value = record[source]
   const label = props.label ? props.label : translate(`resources.${resource}.fields.${source}`)
-
-  const theme = useTheme()
 
   const MuiTelField = styled(MuiTelInput)`
     &.MuiTelInput-TextField {

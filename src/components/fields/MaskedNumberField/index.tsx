@@ -42,6 +42,9 @@ export function MaskedNumberField(props: LabeledFieldProps<MaskedNumberFieldProp
   const translate = useTranslate()
 
   const record = useRecordContext(props)
+
+  if (!record) return null
+
   const value = record[props.source]
 
   const labelToUse = translate(label ? (label as string) : `resources.${resource}.fields.${props.source}`)

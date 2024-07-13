@@ -1,14 +1,21 @@
 import { Chip, Typography } from '@mui/material'
 import React from 'react'
-import { ChipFieldProps, useRecordContext, useResourceDefinition, useTranslate } from 'react-admin'
+import { ChipFieldProps as RAChipFieldProps, useRecordContext, useResourceDefinition, useTranslate } from 'react-admin'
+
+export type ChipFieldProps = Omit<RAChipFieldProps, 'source'> & {
+  source?: string
+}
 
 export function ChipField(props: ChipFieldProps) {
   const { className, source = 'id', emptyText } = props
 
   const record = useRecordContext()
   const translate = useTranslate()
-  let value = record?.[source]
   const { recordRepresentation } = useResourceDefinition()
+
+  if (!record) return null
+
+  let value = record?.[source]
 
   if (value == null && emptyText) {
     return (
