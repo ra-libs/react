@@ -1,5 +1,5 @@
 import { LocalizationProvider, TimePicker } from '@mui/x-date-pickers'
-import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns'
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFnsV3'
 import { parseISO } from 'date-fns'
 import React from 'react'
 import { DateInputProps, useInput, useResourceContext, useTranslate } from 'react-admin'
