@@ -1,3 +1,10 @@
+## [1.11.12](https://github.com/ra-libs/react/compare/v1.11.11...v1.11.12) (2024-07-13)
+
+
+### Bug Fixes
+
+* deps ([31262d6](https://github.com/ra-libs/react/commit/31262d6fa91743843e4c71a8b614eaabb0b55b8b))
+
 ## [1.11.11](https://github.com/ra-libs/react/compare/v1.11.10...v1.11.11) (2024-07-10)
 
 
