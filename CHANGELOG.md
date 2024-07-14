@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/ra-libs/react/compare/v2.0.3...v2.0.4) (2024-07-14)
+
+
+### Bug Fixes
+
+* currency field/input optional source ([89e4ebb](https://github.com/ra-libs/react/commit/89e4ebbdfb8259ef301fcad5ce65b0cf03128777))
+
 ## [2.0.3](https://github.com/ra-libs/react/compare/v2.0.2...v2.0.3) (2024-07-14)
 
 
