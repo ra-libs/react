@@ -7,7 +7,7 @@ CountryField component uses react-admin SelectField with a pre-defined countries
 ```tsx
 import { CountryField } from '@ra-libs/react';
 
-<CountryField useLabel fullWidth />
+<CountryField useLabel />
 ```
 
 ### Props

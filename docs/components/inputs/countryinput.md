@@ -7,7 +7,7 @@ CountryInput component uses react-admin SelectInput with a pre-defined countries
 ```tsx
 import { CountryInput } from '@ra-libs/react';
 
-<CountryInput fullWidth validate={[required()]} />
+<CountryInput validate={[required()]} />
 ```
 
 ### Props

@@ -63,7 +63,7 @@ function FileViewer(props: FileViewerProps) {
   return (
     <>
       {useLabel ? <Labeled label={`resources.${resource}.fields.${source}`}>{button}</Labeled> : button}
-      <Dialog open={open} fullWidth onClose={handleClose} maxWidth='xl'>
+      <Dialog open={open} onClose={handleClose} maxWidth='xl'>
         <DialogTitle textAlign='center'>{fileName}</DialogTitle>
         <DialogContent>
           <Grid container justifyContent='center'>

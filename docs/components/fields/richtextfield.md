@@ -5,7 +5,7 @@ RichTextField component uses react-admin RichTextField with Labeled component
 ```tsx
 import { RichTextField } from '@ra-libs/react';
 
-<RichTextField source="description" fullWidth useLabel />
+<RichTextField source="description" useLabel />
 ```
 
 ### Props
