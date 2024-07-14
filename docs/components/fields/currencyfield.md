@@ -7,7 +7,7 @@ CurrencyField component uses react-admin SelectField with a pre-defined currenci
 ```tsx
 import { CurrencyField } from '@ra-libs/react';
 
-<CurrencyField fullWidth useLabel />
+<CurrencyField useLabel />
 ```
 
 ### Props

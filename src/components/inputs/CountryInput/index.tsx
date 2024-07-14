@@ -3,7 +3,9 @@ import { SelectInput, SelectInputProps } from 'react-admin'
 
 import { useCountries } from '../../../hooks/countries'
 
-type CountryInputProps = SelectInputProps
+type CountryInputProps = Omit<SelectInputProps, 'source'> & {
+  source?: string
+}
 
 export function CountryInput(props: CountryInputProps) {
   const { source = 'country', defaultValue, ...rest } = props

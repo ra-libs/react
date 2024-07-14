@@ -7,7 +7,7 @@ CurrencyInput component uses react-admin SelectField with a pre-defined currenci
 ```tsx
 import { CurrencyInput } from '@ra-libs/react';
 
-<CurrencyInput fullWidth validate={[required()]} />
+<CurrencyInput validate={[required()]} />
 ```
 
 ### Props
