@@ -1,3 +1,11 @@
+## [2.0.3](https://github.com/ra-libs/react/compare/v2.0.2...v2.0.3) (2024-07-14)
+
+
+### Bug Fixes
+
+* country input source field ([1acf170](https://github.com/ra-libs/react/commit/1acf1705b5bcfd7ef580c122a40e513e3cdc77eb))
+* country input source field ([dc331f0](https://github.com/ra-libs/react/commit/dc331f00385c95f1fb1c04e5faf6c5711353a3eb))
+
 ## [2.0.2](https://github.com/ra-libs/react/compare/v2.0.1...v2.0.2) (2024-07-13)
 
 
