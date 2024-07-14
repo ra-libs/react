@@ -4,7 +4,9 @@ import { Labeled, SelectField, SelectFieldProps } from 'react-admin'
 import { LabeledFieldProps } from '../../../config'
 import { useCurrencies } from '../../../hooks/currencies'
 
-type CurrencyFieldProps = SelectFieldProps
+type CurrencyFieldProps = Omit<SelectFieldProps, 'source'> & {
+  source?: string
+}
 
 export function CurrencyField(props: LabeledFieldProps<CurrencyFieldProps>) {
   const { source = 'currency', useLabel, ...rest } = props

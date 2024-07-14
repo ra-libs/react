@@ -3,7 +3,9 @@ import { SelectInput, SelectInputProps } from 'react-admin'
 
 import { useCurrencies } from '../../../hooks/currencies'
 
-type CurrencyInputProps = SelectInputProps
+type CurrencyInputProps = Omit<SelectInputProps, 'source'> & {
+  source?: string
+}
 
 export function CurrencyInput(props: CurrencyInputProps) {
   const { source = 'currency', defaultValue, ...rest } = props
