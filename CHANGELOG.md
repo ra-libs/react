@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/ra-libs/react/compare/v2.0.4...v2.0.5) (2024-07-24)
+
+
+### Bug Fixes
+
+* update deps ([dd2a50e](https://github.com/ra-libs/react/commit/dd2a50eded5855db405297d2afd2d6cf11a58585))
+
 ## [2.0.4](https://github.com/ra-libs/react/compare/v2.0.3...v2.0.4) (2024-07-14)
 
 
